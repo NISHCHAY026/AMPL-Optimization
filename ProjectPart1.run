@@ -1,0 +1,11 @@
+reset;
+
+option solver cplex;
+
+model ProjectPart1.mod;
+
+data ProjectPart1.dat;
+
+solve;
+
+display Profit, Di, Ri, Si;

@@ -1,0 +1,11 @@
+reset;
+
+option solver cplex;
+
+model ProjectPart2.mod;
+
+data ProjectPart2.dat;
+
+solve;
+
+display Cost, w1, w2, w3;

@@ -1,0 +1,19 @@
+reset; # CLEAR FROM ANY PREVIOUS SOLVE
+
+#option solver gurobi; # AMPL OPTION TO CHOOSE AN AVAILABLE SOLVER
+option solver gurobi;
+model sudoku1.mod; # READ IN THE MODEL
+
+data sudoku1.dat; # READ IN THE DATA AND INSTANTIATE THE MODEL
+
+solve;
+ 
+ ##print back the data in 9x9 matrix form 
+for {i in {1,2,3,4,5,6,7,8,9}} 
+{  
+for {j in {1,2,3,4,5,6,7,8,9}} 
+{ 
+printf " %1d", (sum {k in {1,2,3,4,5,6,7,8,9}} k*x[i,j,k]);
+}
+printf "\n";
+}
